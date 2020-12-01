@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class InpurFanc : MonoBehaviour
 {
@@ -15,4 +16,19 @@ public class InpurFanc : MonoBehaviour
     {
         
     }
+
+	public void OnClickSaveButton()
+	{
+    	StreamWriter sw;
+        FileInfo fi;
+        string date_string = Calendar.DayScene_DateTime.Year.ToString()+"-"+Calendar.DayScene_DateTime.Month.ToString()+"-"+Calendar.DayScene_DateTime.Day.ToString();
+        string path = Application.dataPath + @"/Data/" + date_string;
+    	//fileName = fileName + now.Year.ToString() + "_" + now.Month.ToString() + "_" + now.Day.ToString() + "__" + now.Hour.ToString() + "_" + now.Minute.ToString() + "_" + now.Second.ToString();
+        fi = new FileInfo(path + "/memo.txt");
+        sw = fi.AppendText();
+        sw.WriteLine("samplesample");
+        sw.Flush();
+        sw.Close();
+        Debug.Log("Save Completed");
+	}
 }

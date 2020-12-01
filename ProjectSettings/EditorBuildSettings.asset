@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/main_menu.unity
     guid: 1128789355db8474d9fe9b1732c02c8b
+  - enabled: 1
+    path: Assets/Day.unity
+    guid: 552ef172cad8a409ba0d5590d22d5145
   m_configObjects: {}

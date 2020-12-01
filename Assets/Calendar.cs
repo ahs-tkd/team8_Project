@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 
 public class Calendar : MonoBehaviour
 {
     public GameObject canvas;//エディタから指定
     public GameObject prefab;//エディタから指定
-    //public GameObject daytext;
 
     public Text Month;
-
+    public static DateTime DayScene_DateTime;
 
     public static DateTime SelectDate;
     private DateTime D_Date;
@@ -122,6 +122,8 @@ public class Calendar : MonoBehaviour
         Debug.Log(date);
         //Transform DAY = GameObject.Find("Month").transform.GetChild(i);
         //値を保存する処理など
+        DayScene_DateTime = date;
+        SceneManager.LoadScene("Day");
     }
 
 
@@ -131,6 +133,7 @@ public class Calendar : MonoBehaviour
         {
             GameObject button = Instantiate(prefab, canvas.transform);
             button.GetComponent<Button>();
+            DontDestroyOnLoad(this);
         }
 
         SelectDate = DateTime.Now;

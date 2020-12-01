@@ -210,8 +210,9 @@ GameObject:
   - component: {fileID: 324124611}
   - component: {fileID: 324124613}
   - component: {fileID: 324124612}
+  - component: {fileID: 324124614}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Memo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,6 +278,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324124610}
   m_CullTransparentMesh: 0
+--- !u!114 &324124614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324124610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d37b7c15c17e47daa30dfe4517afd5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memo: {fileID: 324124612}
 --- !u!1 &405555406
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,6 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09db824b6abbc4294b590376fd20add2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputField: {fileID: 1510465377}
 --- !u!1 &1605676607
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +892,6 @@ GameObject:
   - component: {fileID: 1605676611}
   - component: {fileID: 1605676610}
   - component: {fileID: 1605676609}
-  - component: {fileID: 1605676612}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -959,6 +973,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 324124614}
+        m_MethodName: OnClickSaveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1605676610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,18 +1021,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605676607}
   m_CullTransparentMesh: 0
---- !u!114 &1605676612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1605676607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4524b863d1de4cb4b949aaf217a9681, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1773684255
 GameObject:
   m_ObjectHideFlags: 0

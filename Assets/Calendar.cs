@@ -9,6 +9,9 @@ public class Calendar : MonoBehaviour
 {
     public GameObject canvas;//エディタから指定
     public GameObject prefab;//エディタから指定
+    //public GameObject daytext;
+
+    public Text Month;
 
 
     public static DateTime SelectDate;
@@ -69,6 +72,7 @@ public class Calendar : MonoBehaviour
                     Transform DAY = GameObject.Find("GameObject").transform.GetChild(i);
                     DateTime tmp = D_Date;//一時変数
                     DayOfWeek num = tmp.DayOfWeek;
+                    Month.text = D_Date.Year.ToString()+"年 "+D_Date.Month.ToString()+"月";
                     //土曜日青・日曜日赤
                     switch (num)
                     {
@@ -84,6 +88,10 @@ public class Calendar : MonoBehaviour
 
                     }
                     DAY.GetChild(0).GetComponent<Text>().text = D_Date.Day.ToString();
+                    //以下3行追加
+                    GameObject button = GameObject.Find("GameObject").transform.GetChild(i).gameObject;
+                    button.GetComponent<Button>().onClick.RemoveAllListeners();
+                    button.GetComponent<Button>().onClick.AddListener(() => { set_Date(tmp); });
                     D_Date = D_Date.AddDays(1);
                     days++;
                 }
@@ -107,6 +115,13 @@ public class Calendar : MonoBehaviour
                 lastmonthdays++;
             }
         }
+    }
+
+    void set_Date(DateTime date)
+    {
+        Debug.Log(date);
+        //Transform DAY = GameObject.Find("Month").transform.GetChild(i);
+        //値を保存する処理など
     }
 
 

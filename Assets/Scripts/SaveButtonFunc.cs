@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;     
-using System.IO; 
+using System.IO;
+using UnityEngine.SceneManagement;
 
 public class SaveButtonFunc : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class SaveButtonFunc : MonoBehaviour
         
     }
 
-    public void OnClickStartButton()
+    public void OnClickButton()
 	{
     	StreamWriter sw;
         FileInfo fi;

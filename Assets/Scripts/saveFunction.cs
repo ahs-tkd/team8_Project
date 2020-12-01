@@ -17,8 +17,8 @@ public class saveFunction : MonoBehaviour
 		// CSV形式で保存するための関数
     private void CSVSave(string data, string fileName)
     {
-        StreamWriter sw;
-        FileInfo fi;
+        //StreamWriter sw;
+        //FileInfo fi;
         DateTime now = DateTime.Now;
         string date_string = Calendar.DayScene_DateTime.Year.ToString()+"-"+Calendar.DayScene_DateTime.Month.ToString()+"-"+Calendar.DayScene_DateTime.Day.ToString();
         string path = Application.dataPath + @"/Data/" + date_string;
@@ -36,12 +36,12 @@ public class saveFunction : MonoBehaviour
             //Console.WriteLine("存在しません");
         }
 
-        fileName = fileName + now.Year.ToString() + "_" + now.Month.ToString() + "_" + now.Day.ToString() + "__" + now.Hour.ToString() + "_" + now.Minute.ToString() + "_" + now.Second.ToString();
+        /*fileName = fileName + now.Year.ToString() + "_" + now.Month.ToString() + "_" + now.Day.ToString() + "__" + now.Hour.ToString() + "_" + now.Minute.ToString() + "_" + now.Second.ToString();
         fi = new FileInfo(path + "/" + fileName + ".txt");
         sw = fi.AppendText();
         sw.WriteLine(data);
         sw.Flush();
         sw.Close();
-        Debug.Log("Save Completed");
+        Debug.Log("Save Completed");*/
     }
 }

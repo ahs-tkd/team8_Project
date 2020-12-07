@@ -133,10 +133,23 @@ public class Calendar : MonoBehaviour
         {
             GameObject button = Instantiate(prefab, canvas.transform);
             button.GetComponent<Button>();
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
         }
 
         SelectDate = DateTime.Now;
         CalendarController();
+        //DontDestroyOnLoad(this);
     }
+
+    public void OnClickPreMonthButton()
+	{
+    	SelectDate = SelectDate.AddMonths(-1);
+        CalendarController();
+	}
+
+	public void OnClickNextMonthButton()
+	{
+    	SelectDate = SelectDate.AddMonths(1);
+        CalendarController();
+	}
 }

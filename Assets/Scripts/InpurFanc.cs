@@ -7,10 +7,13 @@ using UnityEngine.UI;
 public class InpurFanc : MonoBehaviour
 {
     public InputField inputField;
+    private TouchScreenKeyboard keyboard;
+    //string inputtedName = "Name";
+    //const int MAX_LENGTH = 4;
     // Start is called before the first frame update
     void Start()
     {
-        
+        keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
     }
 
     // Update is called once per frame
@@ -33,4 +36,9 @@ public class InpurFanc : MonoBehaviour
         sw.Close();
         Debug.Log("Save Completed");
 	}
+
+    /*void OnGUI()
+    {
+        this.inputtedName = GUI.TextField(new Rect(Screen.width / 2 - 50, Screen.height * 1 / 3, 100, 20), this.inputtedName, MAX_LENGTH);
+    }*/
 }

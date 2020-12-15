@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 90278981}
   - component: {fileID: 90278984}
   - component: {fileID: 90278983}
-  - component: {fileID: 90278982}
   m_Layer: 5
   m_Name: SatText
   m_TagString: Untagged
@@ -171,19 +170,6 @@ RectTransform:
   m_AnchoredPosition: {x: 460, y: 350}
   m_SizeDelta: {x: 1050, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &90278982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90278980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Day: {fileID: 90278983}
 --- !u!114 &90278983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,7 +700,6 @@ GameObject:
   - component: {fileID: 1031172536}
   - component: {fileID: 1031172539}
   - component: {fileID: 1031172538}
-  - component: {fileID: 1031172537}
   m_Layer: 5
   m_Name: SunText
   m_TagString: Untagged
@@ -741,19 +726,6 @@ RectTransform:
   m_AnchoredPosition: {x: -460, y: 350}
   m_SizeDelta: {x: 1050, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1031172537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031172535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Day: {fileID: 1031172538}
 --- !u!114 &1031172538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,8 +803,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -389.48, y: 550}
-  m_SizeDelta: {x: 547.3406, y: 150}
+  m_AnchoredPosition: {x: -390, y: 550}
+  m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1094505436
 MonoBehaviour:
@@ -1011,7 +983,6 @@ GameObject:
   - component: {fileID: 1134858865}
   - component: {fileID: 1134858867}
   - component: {fileID: 1134858866}
-  - component: {fileID: 1134858868}
   m_Layer: 5
   m_Name: WeekDayText
   m_TagString: Untagged
@@ -1079,19 +1050,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134858864}
   m_CullTransparentMesh: 0
---- !u!114 &1134858868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134858864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Day: {fileID: 1134858866}
 --- !u!1 &1157013147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,8 +2081,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 402.85, y: 550}
-  m_SizeDelta: {x: 498.70898, y: 150}
+  m_AnchoredPosition: {x: 390, y: 550}
+  m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2138209943
 MonoBehaviour:

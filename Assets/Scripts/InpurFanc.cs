@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -7,13 +7,10 @@ using UnityEngine.UI;
 public class InpurFanc : MonoBehaviour
 {
     public InputField inputField;
-    private TouchScreenKeyboard keyboard;
-    //string inputtedName = "Name";
-    //const int MAX_LENGTH = 4;
     // Start is called before the first frame update
     void Start()
     {
-        keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+        
     }
 
     // Update is called once per frame
@@ -27,18 +24,13 @@ public class InpurFanc : MonoBehaviour
     	StreamWriter sw;
         FileInfo fi;
         string date_string = Calendar.DayScene_DateTime.Year.ToString()+"-"+Calendar.DayScene_DateTime.Month.ToString()+"-"+Calendar.DayScene_DateTime.Day.ToString();
-        string path = Application.dataPath + @"/Data/" + date_string;
+        string path = Application.persistentDataPath + @"/" + date_string;
     	//fileName = fileName + now.Year.ToString() + "_" + now.Month.ToString() + "_" + now.Day.ToString() + "__" + now.Hour.ToString() + "_" + now.Minute.ToString() + "_" + now.Second.ToString();
-        fi = new FileInfo(path + "/memo.txt");
+        fi = new FileInfo(path + @".txt");
         sw = fi.AppendText();
         sw.WriteLine(inputField.text);
         sw.Flush();
         sw.Close();
         Debug.Log("Save Completed");
 	}
-
-    /*void OnGUI()
-    {
-        this.inputtedName = GUI.TextField(new Rect(Screen.width / 2 - 50, Screen.height * 1 / 3, 100, 20), this.inputtedName, MAX_LENGTH);
-    }*/
 }

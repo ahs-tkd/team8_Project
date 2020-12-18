@@ -569,6 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   locObj: {fileID: 1126031931}
+  datetimeStr: 
 --- !u!1 &1126031929
 GameObject:
   m_ObjectHideFlags: 0

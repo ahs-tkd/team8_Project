@@ -40,19 +40,22 @@ public class GPSButton : MonoBehaviour
         }
         else
         {
+            locTxt.text = "位置情報読み込み完了";
             double latitude = Input.location.lastData.latitude;
             double longitude = Input.location.lastData.longitude;
             StreamWriter sw;
             FileInfo fi;
             DateTime date = System.DateTime.Now;
             string date_string = date.Year.ToString() + "-" + date.Month.ToString() + "-" + date.Day.ToString();
-            string path = Application.dataPath + @"/Data" + date_string;
-            fi = new FileInfo(path + "/memo.txt");
+            string path = Application.persistentDataPath + @"/" + date_string;
+            fi = new FileInfo(path + @".txt");
             sw = fi.AppendText();
 
+            locTxt.text = "ファイル準備完了";
             WWW results = new WWW("https://aginfo.cgk.affrc.go.jp/ws/rgeocode.php?json&lat=" + latitude + "&lon=" + longitude); // 逆ジオコーディング
 
             yield return results;
+            locTxt.text = "API通信完了";
             var search = Json.Deserialize(results.text) as IDictionary;
             var result = search["result"] as IDictionary;
             var prefecture = result["prefecture"] as IDictionary;

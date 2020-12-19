@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,7 +48,7 @@ public class GPSButton : MonoBehaviour
             DateTime date = System.DateTime.Now;
             string date_string = date.Year.ToString() + "-" + date.Month.ToString() + "-" + date.Day.ToString();
             string path = Application.persistentDataPath + @"/" + date_string;
-            fi = new FileInfo(path + @".txt");
+            fi = new FileInfo(path + @".csv");
             sw = fi.AppendText();
 
             locTxt.text = "ファイル準備完了";
@@ -61,7 +61,7 @@ public class GPSButton : MonoBehaviour
             var prefecture = result["prefecture"] as IDictionary;
             var municipality = result["municipality"] as IDictionary;
             string currentPosition = prefecture["pname"] as string + municipality["mname"] as string;
-            string content = date.ToString() + " " + currentPosition;
+            string content = date.ToString() + "," + currentPosition + ",GPS,";
 
             sw.WriteLine(content);
             sw.Flush();

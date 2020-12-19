@@ -47,7 +47,10 @@ public class WriteFile : MonoBehaviour
     	{
         	file_data = sr.ReadToEnd(); // ファイルのデータを「すべて」取得する
     	}
-    	memo.text = file_data;
+        if (memo != null)
+        {
+    	    memo.text = file_data;
+        }
     }
 
     public void OnClickGoOutButton()
@@ -56,5 +59,22 @@ public class WriteFile : MonoBehaviour
         string attribute = "外出";
         WriteAndRead(content, attribute);
         buttonText.text = "OK";
+    }
+
+    public void OnClickGoHomeButton()
+    {
+        string content = "帰宅しました";
+        string attribute = "帰宅";
+        WriteAndRead(content, attribute);
+        buttonText.text = "OK";
+    }
+
+    public void OnClickMemoSaveButton(InputField inputField)
+    {
+        string content = inputField.text;
+        string attribute = "メモ";
+        WriteAndRead(content, attribute);
+        inputField.text = string.Empty;
+        buttonText.text = "保存完了";
     }
 }

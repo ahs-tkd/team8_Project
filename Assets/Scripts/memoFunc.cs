@@ -22,7 +22,7 @@ public class memoFunc : MonoBehaviour
     void showmemo() {
     	string date_string = Calendar.DayScene_DateTime.Year.ToString()+"-"+Calendar.DayScene_DateTime.Month.ToString()+"-"+Calendar.DayScene_DateTime.Day.ToString();
         string path = Application.persistentDataPath + @"/" + date_string;
-    	string file_path = path + @".txt";
+    	string file_path = path + @".csv";
     	if (!System.IO.File.Exists(file_path))
     	{
         	return;

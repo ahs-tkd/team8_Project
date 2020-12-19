@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using System.IO;
 using UnityEngine.UI;
 
@@ -24,11 +25,12 @@ public class InpurFanc : MonoBehaviour
     	StreamWriter sw;
         FileInfo fi;
         string date_string = Calendar.DayScene_DateTime.Year.ToString()+"-"+Calendar.DayScene_DateTime.Month.ToString()+"-"+Calendar.DayScene_DateTime.Day.ToString();
+        DateTime datetime = DateTime.Now;
         string path = Application.persistentDataPath + @"/" + date_string;
     	//fileName = fileName + now.Year.ToString() + "_" + now.Month.ToString() + "_" + now.Day.ToString() + "__" + now.Hour.ToString() + "_" + now.Minute.ToString() + "_" + now.Second.ToString();
-        fi = new FileInfo(path + @".txt");
+        fi = new FileInfo(path + @".csv");
         sw = fi.AppendText();
-        sw.WriteLine(inputField.text);
+        sw.WriteLine(datetime.ToString() + "," + inputField.text + ",メモ,");
         sw.Flush();
         sw.Close();
         Debug.Log("Save Completed");

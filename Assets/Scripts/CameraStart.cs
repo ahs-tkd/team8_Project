@@ -53,16 +53,16 @@ public class CameraStart : MonoBehaviour
         //Object.Destroy(texture);
 
         // ファイルを保存
-        DateTime now = DateTime.Now;
-        File.WriteAllBytes(Application.persistentDataPath + "/pic"+ now.Hour.ToString() + "-" + now.Minute.ToString() + "-" + now.Second.ToString() + "-" + ".jpg", bin);
+        DateTime date = System.DateTime.Now;
+        string date_string = date.Year.ToString() + "-" + date.Month.ToString() + "-" + date.Day.ToString();
+        string path = Application.persistentDataPath + @"/Data/" + date_string;
+        File.WriteAllBytes(path + "/pic"+ date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-" + ".jpg", bin);
 
         //メモ記入
         StreamWriter sw;
         FileInfo fi;
-        DateTime date = System.DateTime.Now;
-        string date_string = date.Year.ToString() + "-" + date.Month.ToString() + "-" + date.Day.ToString();
-        string path = Application.persistentDataPath + @"/" + date_string;
-        fi = new FileInfo(path + @".csv");
+        
+        fi = new FileInfo(path + @"/record.csv");
         sw = fi.AppendText();
         string content = date.ToString() + "," + path + "に画像保存,カメラ,";
 

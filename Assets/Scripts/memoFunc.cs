@@ -21,8 +21,8 @@ public class memoFunc : MonoBehaviour
 
     public void showmemo() {
     	string date_string = Calendar.DayScene_DateTime.Year.ToString()+"-"+Calendar.DayScene_DateTime.Month.ToString()+"-"+Calendar.DayScene_DateTime.Day.ToString();
-        string path = Application.persistentDataPath + @"/" + date_string;
-    	string file_path = path + @".csv";
+        string path = Application.persistentDataPath + @"/Data/" + date_string;
+    	string file_path = path + @"/record.csv";
     	if (!System.IO.File.Exists(file_path))
     	{
         	return;

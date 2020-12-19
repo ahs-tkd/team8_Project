@@ -36,6 +36,7 @@ public class memoFunc : MonoBehaviour
     	}
     	//Console.WriteLine(file_data);
     	memo.text = file_data;
+        Debug.Log(file_path);
     }
 
     public void OnClickSaveButton()

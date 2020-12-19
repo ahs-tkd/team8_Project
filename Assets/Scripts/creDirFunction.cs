@@ -30,6 +30,8 @@ public class creDirFunction : MonoBehaviour
         {
             DirectoryInfo di = new DirectoryInfo(path);
             di.Create();
+            di = new DirectoryInfo(path + "/pic");
+            di.Create();
         }
     }
 }

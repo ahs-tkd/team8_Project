@@ -56,7 +56,7 @@ public class CameraStart : MonoBehaviour
         DateTime date = System.DateTime.Now;
         string date_string = date.Year.ToString() + "-" + date.Month.ToString() + "-" + date.Day.ToString();
         string path = Application.persistentDataPath + @"/Data/" + date_string;
-        File.WriteAllBytes(path + "/pic"+ date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + "-" + ".jpg", bin);
+        File.WriteAllBytes(path + "/pic/"+ date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + ".jpg", bin);
 
         //メモ記入
         StreamWriter sw;
@@ -64,7 +64,7 @@ public class CameraStart : MonoBehaviour
         
         fi = new FileInfo(path + @"/record.csv");
         sw = fi.AppendText();
-        string content = date.ToString() + "," + path + "に画像保存,カメラ,";
+        string content = date.ToString() + "," + path + "/pic/"+ date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + ".jpg" + "に画像保存,カメラ,";
 
         sw.WriteLine(content);
         sw.Flush();

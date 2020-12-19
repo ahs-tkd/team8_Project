@@ -19,7 +19,7 @@ public class memoFunc : MonoBehaviour
         
     }
 
-    void showmemo() {
+    public void showmemo() {
     	string date_string = Calendar.DayScene_DateTime.Year.ToString()+"-"+Calendar.DayScene_DateTime.Month.ToString()+"-"+Calendar.DayScene_DateTime.Day.ToString();
         string path = Application.persistentDataPath + @"/" + date_string;
     	string file_path = path + @".csv";
@@ -36,6 +36,7 @@ public class memoFunc : MonoBehaviour
     	}
     	//Console.WriteLine(file_data);
     	memo.text = file_data;
+        Debug.Log(file_path);
     }
 
     public void OnClickSaveButton()

@@ -47,8 +47,8 @@ public class GPSButton : MonoBehaviour
             FileInfo fi;
             DateTime date = System.DateTime.Now;
             string date_string = date.Year.ToString() + "-" + date.Month.ToString() + "-" + date.Day.ToString();
-            string path = Application.persistentDataPath + @"/" + date_string;
-            fi = new FileInfo(path + @".csv");
+            string path = Application.persistentDataPath + @"/Data/" + date_string;
+            fi = new FileInfo(path + @"/record.csv");
             sw = fi.AppendText();
 
             locTxt.text = "ファイル準備完了";

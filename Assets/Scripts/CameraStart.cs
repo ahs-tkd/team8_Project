@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using System;
+using UnityEngine.SceneManagement;
 
 public class CameraStart : MonoBehaviour
 {
@@ -52,7 +53,23 @@ public class CameraStart : MonoBehaviour
         //Object.Destroy(texture);
 
         // ファイルを保存
-        DateTime now = DateTime.Now;
-        File.WriteAllBytes(Application.persistentDataPath + "/pic"+ now.Hour.ToString() + "-" + now.Minute.ToString() + "-" + now.Second.ToString() + "-" + ".jpg", bin);
+        DateTime date = System.DateTime.Now;
+        string date_string = date.Year.ToString() + "-" + date.Month.ToString() + "-" + date.Day.ToString();
+        string path = Application.persistentDataPath + @"/Data/" + date_string;
+        File.WriteAllBytes(path + "/pic/"+ date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + ".jpg", bin);
+
+        //メモ記入
+        StreamWriter sw;
+        FileInfo fi;
+        
+        fi = new FileInfo(path + @"/record.csv");
+        sw = fi.AppendText();
+        string content = date.ToString() + "," + path + "/pic/"+ date.Hour.ToString() + "-" + date.Minute.ToString() + "-" + date.Second.ToString() + ".jpg" + "に画像保存,カメラ,";
+
+        sw.WriteLine(content);
+        sw.Flush();
+        sw.Close();
+
+        SceneManager.LoadScene("title");
     }
 }

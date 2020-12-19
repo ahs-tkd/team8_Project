@@ -61,7 +61,7 @@ public class GPSButton : MonoBehaviour
             var prefecture = result["prefecture"] as IDictionary;
             var municipality = result["municipality"] as IDictionary;
             string currentPosition = prefecture["pname"] as string + municipality["mname"] as string;
-            string content = date.Date.ToString() + " " + currentPosition;
+            string content = date.ToString() + " " + currentPosition;
 
             sw.WriteLine(content);
             sw.Flush();

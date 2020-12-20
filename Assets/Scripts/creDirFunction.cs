@@ -18,7 +18,7 @@ public class creDirFunction : MonoBehaviour
     {
         //StreamWriter sw;
         //FileInfo fi;
-        DateTime dateTime = date;
+        //DateTime dateTime = date;
         string date_string = date.Year.ToString()+"-"+date.Month.ToString()+"-"+date.Day.ToString();
         string path = Application.persistentDataPath + @"/Data/" + date_string;
  

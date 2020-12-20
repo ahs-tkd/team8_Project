@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System.IO;
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;  
 
 public class PicScroll : MonoBehaviour
 {
@@ -16,7 +19,10 @@ public class PicScroll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    	img_path = new string[] {"/Data/icon_diary.png", "/Data/fish.JPG", "/Data/pig.png"};
+    	DateTime date = Calendar.DayScene_DateTime;
+        string date_string = date.Year.ToString()+"-"+date.Month.ToString()+"-"+date.Day.ToString();
+    	img_path = System.IO.Directory.GetFiles(Application.persistentDataPath+"/Data/"+date_string+"/pic");
+    	//= new string[] {"/Data/icon_diary.png", "/Data/fish.JPG", "/Data/pig.png"};
         for (int i = 0; i < img_path.Length; i++)
         {
         	imgpath = img_path[i];//画像埋め込み
@@ -38,7 +44,7 @@ public class PicScroll : MonoBehaviour
             　
             
             //StartCoroutine(GetImageFromPath(@"file://" + Application.persistentDataPath + @"/Data/pig.png"));
-            StartCoroutine(GetImageFromPath(@"file://" + Application.persistentDataPath + @"/" +img_path[i], ri));
+            StartCoroutine(GetImageFromPath(@"file://" +img_path[i], ri));
         }//*/
     }
 
@@ -53,5 +59,9 @@ public class PicScroll : MonoBehaviour
         WWW www = new WWW(path);
         yield return www;
         _rawImage.texture = www.textureNonReadable;
+    }
+
+    void picDirCheck() {
+
     }
 }

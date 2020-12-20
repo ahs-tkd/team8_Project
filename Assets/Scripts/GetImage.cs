@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//いらないスクリプト
 public class GetImage : MonoBehaviour
 {
 	public RawImage _rawImage;

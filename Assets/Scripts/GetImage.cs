@@ -10,7 +10,9 @@ public class GetImage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(GetImageFromPath(@"file://" + Application.persistentDataPath + PicScroll.imgpath));
+    	string path = PicScroll.imgpath;
+    	Debug.Log(path+"syyjhjjys");
+        //StartCoroutine(GetImageFromPath(@"file://" + Application.persistentDataPath + path));
         //StartCoroutine(GetImageFromPath(@"file://" +Application.persistentDataPath + @"/Data/icon_diary.png"));
     }
 

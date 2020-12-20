@@ -119,7 +119,7 @@ public class Calendar : MonoBehaviour
 
     void set_Date(DateTime date)
     {
-        Debug.Log(date);
+        //Debug.Log(date);
         //Transform DAY = GameObject.Find("Month").transform.GetChild(i);
         //値を保存する処理など
         DayScene_DateTime = date;

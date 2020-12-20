@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using UnityEngine.UI;
 
-public class InpurFanc : MonoBehaviour
+public class InputFanc : MonoBehaviour
 {
     public InputField inputField;
     // Start is called before the first frame update

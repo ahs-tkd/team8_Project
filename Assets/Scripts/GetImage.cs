@@ -10,7 +10,7 @@ public class GetImage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(GetImageFromPath(Application.persistentDataPath + @"/Data/icon_diary.png"));
+        StartCoroutine(GetImageFromPath(@"file://" +Application.persistentDataPath + @"/Data/icon_diary.png"));
     }
 
     // Update is called once per frame

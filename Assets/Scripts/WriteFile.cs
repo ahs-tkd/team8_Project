@@ -28,7 +28,7 @@ public class WriteFile : MonoBehaviour
         FileInfo fi;
         DateTime datetime = DateTime.Now;
         string date_string = datetime.Year.ToString() + "-" + datetime.Month.ToString() + "-" + datetime.Day.ToString();
-        string file_path = Application.persistentDataPath + "/" + date_string + ".csv";
+        string file_path = Application.persistentDataPath + "/Data/" + date_string + "/record.csv";
         fi = new FileInfo(file_path);
         sw = fi.AppendText();
         sw.WriteLine(datetime.ToString() + "," + content + "," + attribute + ",");
@@ -47,13 +47,23 @@ public class WriteFile : MonoBehaviour
     	{
         	file_data = sr.ReadToEnd(); // ファイルのデータを「すべて」取得する
     	}
-    	memo.text = file_data;
+        if (memo != null){
+    	    memo.text = file_data;
+        }
     }
 
     public void OnClickGoOutButton()
     {
         string content = "外出しました";
         string attribute = "外出";
+        WriteAndRead(content, attribute);
+        buttonText.text = "OK";
+    }
+
+    public void OnClickGoHomeButton()
+    {
+        string content = "帰宅しました";
+        string attribute = "帰宅";
         WriteAndRead(content, attribute);
         buttonText.text = "OK";
     }

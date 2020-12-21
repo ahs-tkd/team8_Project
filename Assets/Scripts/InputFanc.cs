@@ -34,5 +34,6 @@ public class InputFanc : MonoBehaviour
         sw.Flush();
         sw.Close();
         Debug.Log("Save Completed");
+        inputField.text = string.Empty;
 	}
 }
